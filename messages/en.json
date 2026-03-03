@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Service Status Monitor - Is It Down Right Now?",
+    "description": "Check real-time status of AWS, Cloudflare, Stripe, Claude, and more. Is it down for everyone or just me? Check here."
+  },
+  "header": {
+    "title": "Service Status",
+    "subtitle": "Is it down for everyone or just me?"
+  },
+  "banner": {
+    "allOperational": "All systems operational",
+    "issuesFound": "{count} service(s) experiencing issues",
+    "lastChecked": "Checked {time} ago",
+    "nextCheck": "Auto-refresh in {seconds}s"
+  },
+  "status": {
+    "operational": "Operational",
+    "degraded": "Degraded Performance",
+    "partial_outage": "Partial Outage",
+    "major_outage": "Major Outage",
+    "maintenance": "Maintenance",
+    "unknown": "Unknown"
+  },
+  "category": {
+    "cloud": "Cloud Infrastructure",
+    "ai": "AI Services",
+    "payment": "Payment Services",
+    "devtools": "Developer Tools",
+    "collaboration": "Collaboration",
+    "korean": "Korean Services"
+  },
+  "serviceCard": {
+    "viewDetails": "View Details",
+    "statusPage": "Official Status Page",
+    "lastIncident": "Last Incident",
+    "noIncidents": "No incidents in the last 90 days"
+  },
+  "detail": {
+    "currentStatus": "Current Status",
+    "recentIncidents": "Recent Incidents",
+    "incidentHistory": "Incident History (Last 90 days)",
+    "noIncidents": "No incidents recorded in the last 90 days.",
+    "incidentStatus": {
+      "investigating": "Investigating",
+      "identified": "Identified",
+      "monitoring": "Monitoring",
+      "resolved": "Resolved"
+    },
+    "impact": {
+      "none": "None",
+      "minor": "Minor",
+      "major": "Major",
+      "critical": "Critical"
+    }
+  },
+  "footer": {
+    "description": "This site automatically collects status information from official status pages and direct monitoring.",
+    "disclaimer": "We do not guarantee the accuracy of information. For critical issues, please check the official status pages.",
+    "github": "GitHub",
+    "dataSource": "Data Sources"
+  },
+  "share": {
+    "title": "Share",
+    "copy": "Copy Link",
+    "copied": "Copied!"
+  },
+  "time": {
+    "justNow": "just now",
+    "minutesAgo": "{count}m ago",
+    "hoursAgo": "{count}h ago",
+    "daysAgo": "{count}d ago"
+  }
+}

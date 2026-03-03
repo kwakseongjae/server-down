@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "서비스 상태 모니터 - 지금 서버 내려갔나요?",
+    "description": "AWS, Cloudflare, Stripe, Claude 등 주요 서비스의 실시간 상태를 확인하세요. 지금 서버가 다운됐나요? 나만 안 되는 건가요? 여기서 확인하세요."
+  },
+  "header": {
+    "title": "서버 상태 확인",
+    "subtitle": "나만 안 되는 건가요?"
+  },
+  "banner": {
+    "allOperational": "모든 서비스 정상 운영 중",
+    "issuesFound": "{count}개 서비스에 이슈가 있습니다",
+    "lastChecked": "{time} 전 확인",
+    "nextCheck": "{seconds}초 후 자동 갱신"
+  },
+  "status": {
+    "operational": "정상",
+    "degraded": "성능 저하",
+    "partial_outage": "부분 장애",
+    "major_outage": "전체 장애",
+    "maintenance": "점검 중",
+    "unknown": "확인 불가"
+  },
+  "category": {
+    "cloud": "클라우드 인프라",
+    "ai": "AI 서비스",
+    "payment": "결제 서비스",
+    "devtools": "개발 도구",
+    "collaboration": "협업·소통",
+    "korean": "국내 서비스"
+  },
+  "serviceCard": {
+    "viewDetails": "자세히 보기",
+    "statusPage": "공식 상태 페이지",
+    "lastIncident": "최근 장애",
+    "noIncidents": "최근 90일간 장애 없음"
+  },
+  "detail": {
+    "currentStatus": "현재 상태",
+    "recentIncidents": "최근 장애 내역",
+    "incidentHistory": "장애 이력 (최근 90일)",
+    "noIncidents": "최근 90일간 장애 기록이 없습니다.",
+    "incidentStatus": {
+      "investigating": "조사 중",
+      "identified": "원인 파악",
+      "monitoring": "모니터링 중",
+      "resolved": "해결됨"
+    },
+    "impact": {
+      "none": "영향 없음",
+      "minor": "경미",
+      "major": "중대",
+      "critical": "심각"
+    }
+  },
+  "footer": {
+    "description": "이 사이트는 각 서비스의 공식 상태 페이지 및 직접 모니터링을 통해 자동으로 상태를 수집합니다.",
+    "disclaimer": "정보의 정확성을 보장하지 않습니다. 중요한 사안은 공식 상태 페이지를 확인하세요.",
+    "github": "GitHub",
+    "dataSource": "데이터 출처"
+  },
+  "share": {
+    "title": "공유하기",
+    "copy": "링크 복사",
+    "copied": "복사됨!"
+  },
+  "time": {
+    "justNow": "방금 전",
+    "minutesAgo": "{count}분 전",
+    "hoursAgo": "{count}시간 전",
+    "daysAgo": "{count}일 전"
+  }
+}
