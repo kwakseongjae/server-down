@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { SERVICES, CATEGORY_ORDER, getServicesByCategory, STATUS_PRIORITY } from '@/lib/services/registry';
 import { AllStatusData, ServiceStatusData } from '@/lib/types';
+import { fetchAllStatuses } from '@/lib/services/fetcher';
 import CategorySection from '@/components/CategorySection';
 import OverallBanner from '@/components/OverallBanner';
 import ServiceLogo from '@/components/ServiceLogo';
@@ -12,15 +13,13 @@ export const revalidate = 60;
 
 async function getStatuses(): Promise<AllStatusData> {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
-
-    const res = await fetch(`${baseUrl}/api/status`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) throw new Error('Failed to fetch');
-    return res.json();
+    const services = await fetchAllStatuses();
+    const now = new Date();
+    return {
+      services,
+      lastUpdatedAt: now.toISOString(),
+      nextUpdateAt: new Date(now.getTime() + 60_000).toISOString(),
+    };
   } catch {
     const now = new Date().toISOString();
     return {
