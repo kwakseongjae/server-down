@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getServiceById, SERVICES } from '@/lib/services/registry';
+import { fetchServiceStatus } from '@/lib/services/fetcher';
 import { ServiceStatusData } from '@/lib/types';
 import StatusBadge from '@/components/StatusBadge';
 import IncidentTimeline from '@/components/IncidentTimeline';
@@ -11,15 +12,7 @@ export const revalidate = 60;
 
 async function getServiceStatus(serviceId: string): Promise<ServiceStatusData> {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/status?service=${serviceId}`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) throw new Error('Failed');
-    const data = await res.json();
-    return data.services?.[0] ?? { serviceId, status: 'unknown', updatedAt: new Date().toISOString(), incidents: [] };
+    return await fetchServiceStatus(serviceId);
   } catch {
     return { serviceId, status: 'unknown', updatedAt: new Date().toISOString(), incidents: [] };
   }
